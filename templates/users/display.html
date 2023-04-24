@@ -18,6 +18,19 @@
             <button class="btn" formaction="/users/{{ user.id }}/edit" formmethod="GET">Edit</button>
             <button class="btn" formaction="/users/{{ user.id }}/delete" formmethod="GET">Delete</button>
         </form>
+
+        <h2>Posts</h2>
+        
+        <ul>
+            {% for post in user.posts %}
+            <li>
+                <a href="/posts/{{post.id}}">{{post.title}}</a>
+                <p>{{post.date}}</p>
+            </li>
+            {% endfor %}
+        </ul>
+
+        <p><a href="/users/{{user.id}}/posts/new" class = "btn">Add post</a></p>
     </div>
 
 </div>
