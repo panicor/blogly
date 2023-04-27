@@ -8,6 +8,15 @@
 <p>Author: {{post.user.full_name}}</p>
 <p>Date: {{post.date}}</p>
 
+{% if post.tags %}
+<div>
+    <p>Tags</p>
+    {% for tag in post.tags %}
+    <a href="/tags/{{ tag.id }}">{{ tag.name}}</a>
+    {% endfor %}
+</div>
+{% endif %}
+
 <form action="">
     <button class="btn">Cancel</button>
     <button class="btn">Edit</button>
